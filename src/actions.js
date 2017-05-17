@@ -18,7 +18,7 @@ export const loginSuccess = (token, decoded) => ({
   payload: { token, decoded }
 });
 
-export const loginError = ({ message, extra }) => ({
+export const loginError = (message, extra) => ({
   type: types.LOGIN_ERROR,
   payload: { message, extra }
 });
