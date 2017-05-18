@@ -1,0 +1,137 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@4.0.5
+3 info using node@v7.4.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/samuel/Desktop/redux-jwt',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/samuel/.npm/nozzmo-redux-jwt/0.0.6/package.tgz not in flight; packing
+9 verbose correctMkdir /home/samuel/.npm correctMkdir not in flight; initializing
+10 warn prepublish-on-install As of npm@5, `prepublish` scripts will run only for `npm publish`.
+11 warn prepublish-on-install (In npm@4 and previous versions, it also runs for `npm install`.)
+12 warn prepublish-on-install See the deprecation note in `npm help scripts` for more information.
+13 info lifecycle nozzmo-redux-jwt@0.0.6~prepublish: nozzmo-redux-jwt@0.0.6
+14 verbose lifecycle nozzmo-redux-jwt@0.0.6~prepublish: unsafe-perm in lifecycle true
+15 verbose lifecycle nozzmo-redux-jwt@0.0.6~prepublish: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/home/samuel/Desktop/redux-jwt/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+16 verbose lifecycle nozzmo-redux-jwt@0.0.6~prepublish: CWD: /home/samuel/Desktop/redux-jwt
+17 silly lifecycle nozzmo-redux-jwt@0.0.6~prepublish: Args: [ '-c',
+17 silly lifecycle   'node_modules/babel-cli/bin/babel.js src --out-dir lib' ]
+18 silly lifecycle nozzmo-redux-jwt@0.0.6~prepublish: Returned: code: 0  signal: null
+19 info lifecycle nozzmo-redux-jwt@0.0.6~prepare: nozzmo-redux-jwt@0.0.6
+20 silly lifecycle nozzmo-redux-jwt@0.0.6~prepare: no script for prepare, continuing
+21 verbose tar pack [ '/home/samuel/.npm/nozzmo-redux-jwt/0.0.6/package.tgz',
+21 verbose tar pack   '/home/samuel/Desktop/redux-jwt' ]
+22 verbose tarball /home/samuel/.npm/nozzmo-redux-jwt/0.0.6/package.tgz
+23 verbose folder /home/samuel/Desktop/redux-jwt
+24 verbose addLocalTarball adding from inside cache /home/samuel/.npm/nozzmo-redux-jwt/0.0.6/package.tgz
+25 verbose correctMkdir /home/samuel/.npm correctMkdir not in flight; initializing
+26 silly cache afterAdd nozzmo-redux-jwt@0.0.6
+27 verbose afterAdd /home/samuel/.npm/nozzmo-redux-jwt/0.0.6/package/package.json not in flight; writing
+28 verbose correctMkdir /home/samuel/.npm correctMkdir not in flight; initializing
+29 verbose afterAdd /home/samuel/.npm/nozzmo-redux-jwt/0.0.6/package/package.json written
+30 silly publish { name: 'nozzmo-redux-jwt',
+30 silly publish   version: '0.0.6',
+30 silly publish   description: '',
+30 silly publish   main: 'lib/index.js',
+30 silly publish   scripts:
+30 silly publish    { prepublish: 'node_modules/babel-cli/bin/babel.js src --out-dir lib',
+30 silly publish      test: 'jest --colors',
+30 silly publish      'test:watch': 'npm test -- --watch' },
+30 silly publish   dependencies:
+30 silly publish    { 'is-promise': '^2.1.0',
+30 silly publish      'jwt-decode': '^2.2.0',
+30 silly publish      redux: '^3.6.0' },
+30 silly publish   jest: { testRegex: '(/__tests__/.*|\\.(test))\\.(ts|tsx|js)$' },
+30 silly publish   devDependencies:
+30 silly publish    { 'babel-cli': '^6.22.2',
+30 silly publish      'babel-core': '^6.22.1',
+30 silly publish      'babel-plugin-add-module-exports': '^0.1.2',
+30 silly publish      'babel-plugin-transform-object-rest-spread': '^6.23.0',
+30 silly publish      'babel-plugin-transform-runtime': '^6.12.0',
+30 silly publish      'babel-preset-es2015': '^6.22.0',
+30 silly publish      'babel-preset-stage-0': '^6.3.13',
+30 silly publish      'deep-freeze': '0.0.1',
+30 silly publish      describe: '^1.2.0',
+30 silly publish      expect: '^1.20.2',
+30 silly publish      'fetch-mock': '^5.10.1',
+30 silly publish      jest: '^18.0.0',
+30 silly publish      nock: '^9.0.13',
+30 silly publish      'redux-mock-store': '^1.2.3',
+30 silly publish      'redux-thunk': '^2.2.0',
+30 silly publish      'whatwg-fetch': '^2.0.3' },
+30 silly publish   babel: { presets: [ 'es2015', 'stage-0' ] },
+30 silly publish   readme: '# redux-jwt',
+30 silly publish   readmeFilename: 'README.md',
+30 silly publish   gitHead: 'd3d427c293a2b70a6ebefc6187a9524bea51587e',
+30 silly publish   _id: 'nozzmo-redux-jwt@0.0.6',
+30 silly publish   _shasum: '2d8387c15810d1a2cbc512051683646abc010544',
+30 silly publish   _from: '.' }
+31 info lifecycle nozzmo-redux-jwt@0.0.6~prepublishOnly: nozzmo-redux-jwt@0.0.6
+32 silly lifecycle nozzmo-redux-jwt@0.0.6~prepublishOnly: no script for prepublishOnly, continuing
+33 verbose getPublishConfig undefined
+34 silly mapToRegistry name nozzmo-redux-jwt
+35 silly mapToRegistry using default registry
+36 silly mapToRegistry registry https://registry.npmjs.org/
+37 silly mapToRegistry data Result {
+37 silly mapToRegistry   raw: 'nozzmo-redux-jwt',
+37 silly mapToRegistry   scope: null,
+37 silly mapToRegistry   escapedName: 'nozzmo-redux-jwt',
+37 silly mapToRegistry   name: 'nozzmo-redux-jwt',
+37 silly mapToRegistry   rawSpec: '',
+37 silly mapToRegistry   spec: 'latest',
+37 silly mapToRegistry   type: 'tag' }
+38 silly mapToRegistry uri https://registry.npmjs.org/nozzmo-redux-jwt
+39 verbose publish registryBase https://registry.npmjs.org/
+40 silly publish uploading /home/samuel/.npm/nozzmo-redux-jwt/0.0.6/package.tgz
+41 verbose request uri https://registry.npmjs.org/nozzmo-redux-jwt
+42 verbose request sending authorization for write operation
+43 info attempt registry request try #1 at 3:03:45 PM
+44 verbose request using bearer token for auth
+45 verbose request id c38332be1af63753
+46 http request PUT https://registry.npmjs.org/nozzmo-redux-jwt
+47 http 403 https://registry.npmjs.org/nozzmo-redux-jwt
+48 verbose headers { 'content-type': 'application/json',
+48 verbose headers   'cache-control': 'max-age=300',
+48 verbose headers   'content-length': '95',
+48 verbose headers   'accept-ranges': 'bytes',
+48 verbose headers   date: 'Thu, 18 May 2017 21:03:46 GMT',
+48 verbose headers   via: '1.1 varnish',
+48 verbose headers   connection: 'keep-alive',
+48 verbose headers   'x-served-by': 'cache-atl6250-ATL',
+48 verbose headers   'x-cache': 'MISS',
+48 verbose headers   'x-cache-hits': '0',
+48 verbose headers   'x-timer': 'S1495141425.491894,VS0,VE1167',
+48 verbose headers   vary: 'Accept-Encoding' }
+49 verbose request invalidating /home/samuel/.npm/registry.npmjs.org/nozzmo-redux-jwt on PUT
+50 error publish Failed PUT 403
+51 verbose stack Error: "You cannot publish over the previously published version 0.0.6." : nozzmo-redux-jwt
+51 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+51 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+51 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+51 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:186:22)
+51 verbose stack     at emitTwo (events.js:106:13)
+51 verbose stack     at Request.emit (events.js:191:7)
+51 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1081:10)
+51 verbose stack     at emitOne (events.js:96:13)
+51 verbose stack     at Request.emit (events.js:188:7)
+51 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1001:12)
+52 verbose statusCode 403
+53 verbose pkgid nozzmo-redux-jwt
+54 verbose cwd /home/samuel/Desktop/redux-jwt
+55 error Linux 4.4.0-75-generic
+56 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+57 error node v7.4.0
+58 error npm  v4.0.5
+59 error code E403
+60 error "You cannot publish over the previously published version 0.0.6." : nozzmo-redux-jwt
+61 error If you need help, you may report this error at:
+61 error     <https://github.com/npm/npm/issues>
+62 verbose exit [ 1, true ]
