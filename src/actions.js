@@ -23,10 +23,9 @@ export const loginError = (message, extra) => ({
   payload: { message, extra }
 });
 
-export const login = ({ apiLogin }) =>
+export const login = apiLogin =>
   (username, password) =>
     dispatch => {
-
       dispatch(loginStart(username));
 
       return apiLogin(username, password).then(
