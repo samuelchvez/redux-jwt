@@ -7,8 +7,8 @@ import reducer from './reducer';
 describe('redux-jwt reducer', () => {
   it('should register token and payload after a successful login. It should clear the error when the login succeeds.', () => {
     const stateBefore = {
-      token: null,
-      decoded: null,
+      token: "",
+      decoded: {},
       error: {
         message: "Some",
         extra: { a: 1 }
@@ -21,8 +21,8 @@ describe('redux-jwt reducer', () => {
         exp: 12345678
       },
       error: {
-        message: null,
-        extra: null
+        message: "",
+        extra: {}
       }
     };
 
@@ -39,17 +39,17 @@ describe('redux-jwt reducer', () => {
         exp: 12345678
       },
       error: {
-        message: null,
-        extra: null
+        message: "",
+        extra: {}
       }
     };
     const action = actions.logout();
     const stateAfter = {
-      token: null,
-      decoded: null,
+      token: "",
+      decoded: {},
       error: {
-        message: null,
-        extra: null
+        message: "",
+        extra: {}
       }
     };
 
@@ -64,15 +64,15 @@ describe('redux-jwt reducer', () => {
       token: '1512',
       decoded: { exp: 123 },
       error: {
-        message: null,
-        extra: null
+        message: "",
+        extra: {}
       }
     };
 
     const action = actions.loginError('Error', {a: 1});
     const stateAfter = {
-      token: null,
-      decoded: null,
+      token: "",
+      decoded: {},
       error: {
         message: 'Error',
         extra: {a: 1}
@@ -87,8 +87,8 @@ describe('redux-jwt reducer', () => {
 
   it('should clean error when login starts.', () => {
     const stateBefore = {
-      token: null,
-      decoded: null,
+      token: "",
+      decoded: {},
       error: {
         message: "Test",
         extra: { a: 1 }
@@ -96,11 +96,11 @@ describe('redux-jwt reducer', () => {
     };
     const action = actions.loginStart('test');
     const stateAfter = {
-      token: null,
-      decoded: null,
+      token: "",
+      decoded: {},
       error: {
-        message: null,
-        extra: null
+        message: "",
+        extra: {}
       }
     };
 

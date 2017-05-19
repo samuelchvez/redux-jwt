@@ -30,6 +30,9 @@ describe('redux-jwt selectors', () => {
   it('should get the error message.', () =>
     expect(selectors.getErrorMessage(STATE)).toEqual('Hello'));
 
+  it('should get if it\'s authenticated.', () =>
+    expect(selectors.getIsAuth(STATE)).toEqual(true));
+
   it('should get the error extra data.', () =>
     expect(selectors.getErrorExtra(STATE)).toEqual({
       a: 1,
