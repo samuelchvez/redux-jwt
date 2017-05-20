@@ -9,6 +9,9 @@
     "coverage": "codecov",
     "test:watch": "npm test -- --watch"
   },
+  "files": [
+    "lib/"
+  ],
   "dependencies": {
     "is-promise": "^2.1.0",
     "jwt-decode": "^2.2.0",
