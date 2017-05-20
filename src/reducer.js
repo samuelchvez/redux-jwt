@@ -41,7 +41,9 @@ const errorMessage = (state = "", { type, payload }) => {
 const errorExtra = (state = {}, { type, payload }) => {
   switch(type) {
     case types.LOGIN_START:
+      return {};
     case types.LOGIN_SUCCESS:
+      return {};
     case types.LOGOUT:
       return {};
     case types.LOGIN_ERROR:

@@ -37,18 +37,11 @@ export const login = apiLogin =>
       ).catch( e => {
         const { message, promise, ...rest } = e;
 
-        if(isPromise(e))
-          return e.then(extra =>
-            dispatch(
-              loginError(message, extra)))
-
         if(isPromise(promise))
           return promise.then(extra =>
             dispatch(
               loginError(message, extra)))
 
-        loginError(message, e);
-
-        throw(e);
+        return dispatch(loginError(message, e));
       })
   }

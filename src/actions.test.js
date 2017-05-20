@@ -103,7 +103,7 @@ describe('redux-jwt actions', () => {
       })
   })
 
-  it('generates a sequence of actions when login request fails.', () => {
+  it('generates a sequence of actions when login request fails and handle error promise.', () => {
     const username = 'test';
     const password = 'pass123';
     const errorStatusMessage = "Bad Request"
@@ -133,6 +133,57 @@ describe('redux-jwt actions', () => {
         payload: {
           message: errorStatusMessage,
           extra: promiseResolvedValue
+        }
+      }
+    ]
+
+    // Store mock
+    const store = mockStore({
+      token: null,
+      decoded: null,
+      error: {
+        message: null,
+        extra: null
+      }
+    })
+
+    return store.dispatch(login(username, password))
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions)
+      })
+  })
+
+  it('generates a sequence of actions when login request fails and doesn\'t handle error promise.', () => {
+    const username = 'test';
+    const password = 'pass123';
+    const errorStatusMessage = "Bad Request"
+    const promiseResolvedValue = {
+      errors: ["Unable to login. Invalid credentialls"]
+    }
+
+    // Intercept posts to jwt-auth
+    fetchMock.once(
+      'http://localhost:8000/jwt-auth/',
+      {
+        throws: {
+          message: errorStatusMessage
+        }
+      }
+    );
+
+    // Expected action sequence
+    const expectedActions = [
+      {
+        type: types.LOGIN_START,
+        payload: { username }
+      },
+      {
+        type: types.LOGIN_ERROR,
+        payload: {
+          message: errorStatusMessage,
+          extra: {
+            message: errorStatusMessage
+          }
         }
       }
     ]
