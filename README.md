@@ -6,7 +6,15 @@
 
 Easy to use JWT authentication management library for [Redux](http://redux.js.org/).
 
-## Using it
+## Installation
+
+Configure auth reducer in your main reducer:
+
+```
+npm install nozzmo-redux-jwt --save
+```
+
+## Use
 
 Configure auth reducer in your main reducer:
 
