@@ -55,13 +55,13 @@ const errorExtra = (state = {}, { type, payload }) => {
 
 const error = combineReducers({
   message: errorMessage,
-  extra: errorExtra,
+  extra: errorExtra
 });
 
 const auth = combineReducers({
   token,
   decoded,
-  error,
+  error
 });
 
 export default auth;
