@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/samuelchvez/redux-jwt.svg?branch=master)](https://travis-ci.org/samuelchvez/redux-jwt) [![codecov.io Code Coverage](https://img.shields.io/codecov/c/github/samuelchvez/redux-jwt.svg?maxAge=2592000)](https://codecov.io/github/samuelchvez/redux-jwt?branch=master) [![Dependency Status](https://david-dm.org/samuelchvez/redux-jwt.svg)](https://david-dm.org/samuelchvez/redux-jwt) [![devDependencies Status](https://david-dm.org/samuelchvez/redux-jwt/dev-status.svg)](https://david-dm.org/samuelchvez/redux-jwt?type=dev) [![Code Climate](https://codeclimate.com/github/samuelchvez/redux-jwt/badges/gpa.svg)](https://codeclimate.com/github/samuelchvez/redux-jwt)
+
 # Redux JWT
 
 Easy to use JWT authentication management library for [Redux](http://redux.js.org/).
