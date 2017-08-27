@@ -3,10 +3,10 @@ import * as types from './types';
 
 const token = (state = "", { type, payload }) => {
   switch(type) {
-    case types.LOGIN_SUCCESS:
+    case types.LOGIN_SUCCEED:
       return payload.token;
     case types.LOGOUT:
-    case types.LOGIN_ERROR:
+    case types.LOGIN_FAILED:
       return "";
     default:
       return state;
@@ -15,10 +15,10 @@ const token = (state = "", { type, payload }) => {
 
 const decoded = (state = {}, { type, payload }) => {
   switch(type) {
-    case types.LOGIN_SUCCESS:
+    case types.LOGIN_SUCCEED:
       return payload.decoded;
     case types.LOGOUT:
-    case types.LOGIN_ERROR:
+    case types.LOGIN_FAILED:
       return {};
     default:
       return state;
@@ -27,11 +27,11 @@ const decoded = (state = {}, { type, payload }) => {
 
 const errorMessage = (state = "", { type, payload }) => {
   switch(type) {
-    case types.LOGIN_START:
-    case types.LOGIN_SUCCESS:
+    case types.LOGIN_STARTED:
+    case types.LOGIN_SUCCEED:
     case types.LOGOUT:
       return "";
-    case types.LOGIN_ERROR:
+    case types.LOGIN_FAILED:
       return payload.message;
     default:
       return state;
@@ -40,13 +40,13 @@ const errorMessage = (state = "", { type, payload }) => {
 
 const errorExtra = (state = {}, { type, payload }) => {
   switch(type) {
-    case types.LOGIN_START:
+    case types.LOGIN_STARTED:
       return {};
-    case types.LOGIN_SUCCESS:
+    case types.LOGIN_SUCCEED:
       return {};
     case types.LOGOUT:
       return {};
-    case types.LOGIN_ERROR:
+    case types.LOGIN_FAILED:
       return payload.extra;
     default:
       return state;

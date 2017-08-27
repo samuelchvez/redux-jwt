@@ -1,4 +1,4 @@
-export const LOGIN_START = "@@redux-jwt/LOGIN_START";
-export const LOGIN_SUCCESS = "@@redux-jwt/LOGIN_SUCCESS";
-export const LOGIN_ERROR = "@@redux-jwt/LOGIN_ERROR";
+export const LOGIN_STARTED = "@@redux-jwt/LOGIN_STARTED";
+export const LOGIN_SUCCEED = "@@redux-jwt/LOGIN_SUCCEED";
+export const LOGIN_FAILED = "@@redux-jwt/LOGIN_FAILED";
 export const LOGOUT = "@@redux-jwt/LOGOUT";

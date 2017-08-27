@@ -8,30 +8,30 @@ export const logout = () => ({
   payload: {}
 });
 
-export const loginStart = username => ({
-  type: types.LOGIN_START,
-  payload: { username }
+export const startLogin = (username, password) => ({
+  type: types.LOGIN_STARTED,
+  payload: { username, password }
 });
 
-export const loginSuccess = (token, decoded) => ({
-  type: types.LOGIN_SUCCESS,
+export const completeLogin = (token, decoded) => ({
+  type: types.LOGIN_SUCCEED,
   payload: { token, decoded }
 });
 
-export const loginError = (message, extra) => ({
-  type: types.LOGIN_ERROR,
+export const failLogin = (message, extra) => ({
+  type: types.LOGIN_FAILED,
   payload: { message, extra }
 });
 
 export const login = apiLogin =>
   (username, password) =>
     dispatch => {
-      dispatch(loginStart(username));
+      dispatch(startLogin(username));
 
       return apiLogin(username, password).then(
         token => {
           const decoded = jwt_decode(token)
-          dispatch(loginSuccess(token, decoded));
+          dispatch(completeLogin(token, decoded));
           return { token, decoded }
         }
       ).catch( e => {
@@ -40,7 +40,7 @@ export const login = apiLogin =>
         if(isPromise(promise))
           return promise.then(extra =>
             dispatch(
-              loginError(message, extra)))
+              failLogin(message, extra)))
 
         return dispatch(loginError(message, e));
       })
