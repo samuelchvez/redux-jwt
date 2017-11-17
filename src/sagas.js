@@ -18,7 +18,8 @@ export const genLoginSaga = (apiLogin) => {
         yield put(
           jwtActions.completeLogin(
             token,
-            jwt_decode(token)
+            jwt_decode(token),
+            payload
           )
         );
      } catch (error) {

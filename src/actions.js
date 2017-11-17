@@ -13,9 +13,9 @@ export const startLogin = (username, password) => ({
   payload: { username, password }
 });
 
-export const completeLogin = (token, decoded) => ({
+export const completeLogin = (token, decoded, extra) => ({
   type: types.LOGIN_SUCCEED,
-  payload: { token, decoded }
+  payload: { token, decoded, ...extra }
 });
 
 export const failLogin = (message, extra) => ({
