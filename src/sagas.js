@@ -6,19 +6,22 @@ import { actions as jwtActions, types as jwtTypes } from 'nozzmo-redux-jwt';
 import { call, put, takeEvery } from 'redux-saga/effects'
 
 
-export const genLoginSaga = (apiLogin) => {
+export const genLoginSaga = (apiLogin, getToken, getDecoded) => {
   const login = function* ({ payload }) {
      try {
-        const token = yield call(
+        const result = yield call(
           apiLogin,
           payload.username,
           payload.password
         );
 
+        const token = getToken(result);
+        const decoded = getDecoded(jwt_decode, result, payload);
+
         yield put(
           jwtActions.completeLogin(
             token,
-            jwt_decode(token),
+            decoded,
             payload
           )
         );
