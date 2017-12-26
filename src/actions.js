@@ -3,22 +3,22 @@ import isPromise from 'is-promise';
 
 import * as types from './types';
 
-export const logout = () => ({
+export const logout = (extra = {}) => ({
   type: types.LOGOUT,
-  payload: {}
+  payload: { ...extra }
 });
 
-export const startLogin = (username, password) => ({
+export const startLogin = (username, password, extra = {}) => ({
   type: types.LOGIN_STARTED,
-  payload: { username, password }
+  payload: { username, password, ...extra }
 });
 
-export const completeLogin = (token, decoded, extra) => ({
+export const completeLogin = (token, decoded, extra = {}) => ({
   type: types.LOGIN_SUCCEED,
   payload: { token, decoded, ...extra }
 });
 
-export const failLogin = (message, extra) => ({
+export const failLogin = (message, extra = {}) => ({
   type: types.LOGIN_FAILED,
   payload: { message, extra }
 });
