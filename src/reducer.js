@@ -32,7 +32,7 @@ const errorMessage = (state = "", { type, payload }) => {
     case types.LOGOUT:
       return "";
     case types.LOGIN_FAILED:
-      return payload.message;
+      return payload.message || "";
     default:
       return state;
   }
@@ -47,7 +47,7 @@ const errorExtra = (state = {}, { type, payload }) => {
     case types.LOGOUT:
       return {};
     case types.LOGIN_FAILED:
-      return payload.extra;
+      return payload.extra || {};
     default:
       return state;
   }
