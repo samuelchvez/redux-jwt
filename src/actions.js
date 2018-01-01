@@ -18,9 +18,19 @@ export const completeLogin = (token, decoded, extra = {}) => ({
   payload: { token, decoded, ...extra }
 });
 
-export const failLogin = (message, extra = {}) => ({
+export const failLogin = ({
+  status,
+  message,
+  extra = {},
+  retryAction
+}) => ({
   type: types.LOGIN_FAILED,
-  payload: { message, extra }
+  payload: {
+    status,
+    message,
+    extra,
+    retryAction
+  }
 });
 
 export const login = apiLogin =>

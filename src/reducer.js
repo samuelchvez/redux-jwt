@@ -25,38 +25,18 @@ const decoded = (state = {}, { type, payload }) => {
   }
 }
 
-const errorMessage = (state = "", { type, payload }) => {
+const error = (state = {}, { type, payload }) => {
   switch(type) {
     case types.LOGIN_STARTED:
     case types.LOGIN_SUCCEED:
     case types.LOGOUT:
-      return "";
+      return {};
     case types.LOGIN_FAILED:
-      return payload.message || "";
+      return payload;
     default:
       return state;
   }
 }
-
-const errorExtra = (state = {}, { type, payload }) => {
-  switch(type) {
-    case types.LOGIN_STARTED:
-      return {};
-    case types.LOGIN_SUCCEED:
-      return {};
-    case types.LOGOUT:
-      return {};
-    case types.LOGIN_FAILED:
-      return payload.extra || {};
-    default:
-      return state;
-  }
-}
-
-const error = combineReducers({
-  message: errorMessage,
-  extra: errorExtra
-});
 
 const auth = combineReducers({
   token,
@@ -71,3 +51,5 @@ export const getIsAuth = state => getToken(state).length > 0;
 export const getDecoded = state => state.decoded;
 export const getErrorMessage = state => state.error.message;
 export const getErrorExtra = state => state.error.extra;
+export const getErrorStatus = state => state.error.status;
+export const getErrorRetryAction = state => state.error.retryAction;
