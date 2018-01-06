@@ -49,7 +49,4 @@ export default auth;
 export const getToken = state => state.token;
 export const getIsAuth = state => getToken(state).length > 0;
 export const getDecoded = state => state.decoded;
-export const getErrorMessage = state => state.error.message;
-export const getErrorExtra = state => state.error.extra;
-export const getErrorStatus = state => state.error.status;
-export const getErrorRetryAction = state => state.error.retryAction;
+export const getError = state => state.error;
