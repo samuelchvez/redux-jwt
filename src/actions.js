@@ -21,14 +21,14 @@ export const completeLogin = (token, decoded, extra = {}) => ({
 export const failLogin = ({
   status,
   message,
-  extra = {},
+  data = {},
   retryAction
 }) => ({
   type: types.LOGIN_FAILED,
   payload: {
     status,
     message,
-    extra,
+    data,
     retryAction
   }
 });
