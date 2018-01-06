@@ -30,13 +30,12 @@ export const genLoginSaga = (apiLogin, getToken, getDecoded) => {
     } catch (error) {
       const { status, statusText, data } = error;
       const message = statusText;
-      const extra = data;
       const retryAction = action;
 
       yield put(actions.failLogin({
         status,
         message,
-        extra,
+        data,
         retryAction
       }));
     }
