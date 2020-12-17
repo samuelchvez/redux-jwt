@@ -10,11 +10,13 @@ import * as types from './types';
 export const genLoginSaga = (apiLogin, getToken, getDecoded) => {
   const login = function* (action) {
     const { payload } = action;
+    const { username, password, ...extra } = payload;
     try {
       const result = yield call(
         apiLogin,
-        payload.username,
-        payload.password
+        username,
+        password,
+        extra,
       );
 
       const token = getToken(result);
